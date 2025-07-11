@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Truck, Shield, HeadphonesIcon, RefreshCw } from 'lucide-react';
@@ -9,7 +8,7 @@ import Footer from '@/components/Footer';
 import ProductCard from '@/components/ProductCard';
 
 const Index = () => {
-  // Sample featured products
+  // Expanded featured products for better showcase
   const featuredProducts = [
     {
       id: 1,
@@ -48,6 +47,46 @@ const Index = () => {
       rating: 4.6,
       reviews: 203,
       category: "Electronics"
+    },
+    {
+      id: 14,
+      name: "Wireless Earbuds",
+      price: 99.99,
+      originalPrice: 129.99,
+      image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=300&fit=crop",
+      rating: 4.7,
+      reviews: 445,
+      category: "Electronics"
+    },
+    {
+      id: 5,
+      name: "Leather Backpack",
+      price: 89.99,
+      originalPrice: 119.99,
+      image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop",
+      rating: 4.4,
+      reviews: 67,
+      category: "Accessories"
+    },
+    {
+      id: 9,
+      name: "Portable Bluetooth Speaker",
+      price: 59.99,
+      originalPrice: 79.99,
+      image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=300&fit=crop",
+      rating: 4.4,
+      reviews: 178,
+      category: "Electronics"
+    },
+    {
+      id: 8,
+      name: "Running Shoes",
+      price: 129.99,
+      originalPrice: 159.99,
+      image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop",
+      rating: 4.5,
+      reviews: 289,
+      category: "Clothing"
     }
   ];
 
@@ -131,7 +170,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {featuredProducts.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}

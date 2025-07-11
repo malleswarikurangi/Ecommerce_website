@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Filter, Search, SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -14,7 +13,7 @@ const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('featured');
 
-  // Sample products data
+  // Expanded products data with better variety
   const allProducts = [
     {
       id: 1,
@@ -91,10 +90,106 @@ const Products = () => {
       rating: 4.5,
       reviews: 289,
       category: "Clothing"
+    },
+    {
+      id: 9,
+      name: "Portable Bluetooth Speaker",
+      price: 59.99,
+      originalPrice: 79.99,
+      image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=300&fit=crop",
+      rating: 4.4,
+      reviews: 178,
+      category: "Electronics"
+    },
+    {
+      id: 10,
+      name: "Stainless Steel Water Bottle",
+      price: 19.99,
+      image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=300&fit=crop",
+      rating: 4.6,
+      reviews: 92,
+      category: "Accessories"
+    },
+    {
+      id: 11,
+      name: "Yoga Mat",
+      price: 34.99,
+      originalPrice: 49.99,
+      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop",
+      rating: 4.3,
+      reviews: 156,
+      category: "Sports"
+    },
+    {
+      id: 12,
+      name: "Kitchen Knife Set",
+      price: 89.99,
+      image: "https://images.unsplash.com/photo-1593618998160-e34014e67546?w=400&h=300&fit=crop",
+      rating: 4.8,
+      reviews: 234,
+      category: "Appliances"
+    },
+    {
+      id: 13,
+      name: "Desk Lamp",
+      price: 39.99,
+      originalPrice: 54.99,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+      rating: 4.2,
+      reviews: 78,
+      category: "Home"
+    },
+    {
+      id: 14,
+      name: "Wireless Earbuds",
+      price: 99.99,
+      originalPrice: 129.99,
+      image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=300&fit=crop",
+      rating: 4.7,
+      reviews: 445,
+      category: "Electronics"
+    },
+    {
+      id: 15,
+      name: "Throw Pillow Set",
+      price: 24.99,
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+      rating: 4.1,
+      reviews: 67,
+      category: "Home"
+    },
+    {
+      id: 16,
+      name: "Gaming Keyboard",
+      price: 79.99,
+      originalPrice: 99.99,
+      image: "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400&h=300&fit=crop",
+      rating: 4.6,
+      reviews: 189,
+      category: "Electronics"
+    },
+    {
+      id: 17,
+      name: "Canvas Sneakers",
+      price: 49.99,
+      image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop",
+      rating: 4.3,
+      reviews: 123,
+      category: "Clothing"
+    },
+    {
+      id: 18,
+      name: "Essential Oil Diffuser",
+      price: 44.99,
+      originalPrice: 59.99,
+      image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=300&fit=crop",
+      rating: 4.5,
+      reviews: 201,
+      category: "Home"
     }
   ];
 
-  const categories = ['all', 'Electronics', 'Clothing', 'Appliances', 'Accessories', 'Home'];
+  const categories = ['all', 'Electronics', 'Clothing', 'Appliances', 'Accessories', 'Home', 'Sports'];
 
   const filteredProducts = allProducts.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -209,8 +304,8 @@ const Products = () => {
               </p>
             </div>
 
-            {/* Products Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Products Grid - Improved alignment */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {sortedProducts.map(product => (
                 <ProductCard key={product.id} product={product} />
               ))}
